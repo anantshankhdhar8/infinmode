@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     
     /* ==========================================================================
-       STICKY HEADER 
+       STICKY HEADER
        ========================================================================== */
     const header = document.getElementById('header');
     
