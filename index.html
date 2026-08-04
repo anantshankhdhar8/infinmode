@@ -35,67 +35,80 @@
                     <li><a href="#roi-calculator">ROI Calculator</a></li>
                     <li><a href="#faq">FAQ</a></li>
                 </ul>
-                <a href="#cta" class="btn btn-primary btn-small">Start Free Trial</a>
+                <a href="#cta" class="btn btn-primary btn-small">Contact Us</a>
             </nav>
         </div>
     </header>
 
     <main>
-        <!-- SECTION 2: Hero -->
+        <!-- SECTION 2: Hero (Vertical Cascade Reality) -->
         <section class="hero section-padding">
             <div class="container hero-container">
                 <div class="hero-content reveal-on-scroll">
                     <span class="eyebrow">Built for Home Service Businesses</span>
                     <h1>Never lose a job to a missed call again.</h1>
                     <p>When you're on a job, you can't always answer the phone. Infinmode instantly texts missed callers, collects their job details, and delivers the lead straight to your inbox—before they can call your competitor.</p>
+                    
+                    <!-- UPDATED HERO ACTIONS: Added ROI Calculator -->
                     <div class="hero-actions">
-                        <a href="#cta" class="btn btn-primary">Start Your Free Trial</a>
-                        <a href="#how-it-works" class="btn btn-ghost">See How It Works <span aria-hidden="true">&rarr;</span></a>
+                        <a href="#cta" class="btn btn-primary btn-large">Get Started & Pricing</a>
+                        <div class="hero-links">
+                            <a href="#roi-calculator" class="btn btn-secondary">Calculate ROI</a>
+                            <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- NEW HERO UI COMPOSITE -->
-                <div class="hero-media reveal-on-scroll delay-1" aria-label="Illustration showing a missed call turning into an SMS chat, resulting in a lead notification.">
-                    <div class="hero-composite">
+                <!-- UPDATED HERO SHOWCASE (Vertical Stack, zero squishing) -->
+                <div class="hero-media reveal-on-scroll delay-1">
+                    <!-- Right Side: The Bento Box Arc (100% Responsive) -->
+                <div class="hero-media reveal-on-scroll delay-1">
+                    <div class="hero-bento">
                         
-                        <!-- Element 1: The Phone (The Conversation) -->
-                        <div class="hero-phone floating">
-                            <div class="hero-phone-notch"></div>
-                            <div class="hero-missed-call">
-                                <span class="pulse-dot"></span> Missed Call
-                            </div>
-                            <div class="hero-chat">
-                                <div class="hero-bubble ai">Hi! This is Joe from Apex Plumbing. Sorry we missed your call. What's the emergency?</div>
-                                <div class="hero-bubble user">My water heater is leaking all over the garage!</div>
-                            </div>
-                        </div>
-
-                        <!-- Connecting Arrow (Desktop only) -->
-                        <div class="hero-connector">
-                            <svg width="60" height="24" viewBox="0 0 60 24" fill="none" stroke="var(--c-accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M0 12h56M48 4l8 8-8 8"/>
-                            </svg>
-                        </div>
-
-                        <!-- Element 2: The Lead Card (The Result) -->
-                        <div class="hero-lead floating-delayed glass-panel">
-                            <div class="lead-badge">✨ Lead Captured</div>
-                            <div class="lead-row">
-                                <div class="lead-avatar">JD</div>
-                                <div>
-                                    <div class="lead-name">John Doe</div>
-                                    <div class="lead-address">123 Main St, Austin TX</div>
+                        <!-- Step 1: Missed Call (iOS Notification Style) -->
+                        <div class="bento-card bento-notification">
+                            <div class="bento-header">
+                                <div class="bento-icon bg-red">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path><line x1="15" y1="9" x2="21" y2="3"></line><line x1="15" y1="3" x2="21" y2="9"></line></svg>
                                 </div>
+                                <span>Missed Call</span>
+                                <span class="bento-time">Just now</span>
                             </div>
-                            <div class="lead-problem">
-                                <strong>Issue:</strong> Water heater leaking in garage.
+                            <div class="bento-body">
+                                <strong>(555) 123-4567</strong>
+                                <p>No voicemail left.</p>
                             </div>
-                            <div class="lead-action">
-                                <div class="btn btn-primary btn-small btn-full" style="pointer-events: none;">Call Customer Now</div>
+                        </div>
+
+                        <!-- Step 2: Instant Chat (SMS Bubble Style) -->
+                        <div class="bento-card bento-chat">
+                            <div class="bento-header">
+                                <div class="bento-icon bg-blue">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                </div>
+                                <span>Infinmode AI</span>
+                            </div>
+                            <div class="bento-body chat-body">
+                                <div class="bento-bubble">Sorry we missed you! What's the emergency?</div>
+                                <div class="bento-reply">Kitchen sink pipe burst!</div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Truck Dispatched (SaaS Dashboard Style) -->
+                        <div class="bento-card bento-truck">
+                            <div class="truck-graphic">
+                                <div class="pulse-ring"></div>
+                                <svg class="truck-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                            </div>
+                            <div class="truck-details">
+                                <div class="truck-status">✅ JOB BOOKED & DISPATCHED</div>
+                                <strong>123 Main St, Anytown</strong>
+                                <p>Issue: Kitchen sink pipe burst</p>
                             </div>
                         </div>
 
                     </div>
+                </div>
                 </div>
             </div>
         </section>
@@ -104,7 +117,7 @@
         <section class="problem bg-offwhite section-padding" id="problem">
             <div class="container">
                 <h2 class="text-center reveal-on-scroll">Your customers won't wait for you to call back.</h2>
-                <div class="grid grid-3 problem-grid">
+                <div class="grid grid-3 problem-grid mt-4">
                     <article class="card reveal-on-scroll delay-1">
                         <div class="card-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
@@ -168,10 +181,10 @@
                         <div class="iphone-mockup" id="chat-mockup">
                             <div class="iphone-notch"></div>
                             <div class="chat-interface">
-                                <div class="chat-bubble received">Hi! This is Joe from [Business Name]. Sorry we missed your call. What is the emergency we can help you with? Reply STOP to opt out.</div>
-                                <div class="chat-bubble sent">My water heater is leaking all over the garage.</div>
+                                <div class="chat-bubble received">Hi! This is Joe from Apex Plumbing. Sorry we missed your call. What is the emergency we can help you with? Reply STOP to opt out.</div>
+                                <div class="chat-bubble sent">My kitchen sink is broken and leaking everywhere!</div>
                                 <div class="chat-bubble received">I can definitely help with that. What is the address we would be coming to?</div>
-                                <div class="chat-bubble sent">123 Main St, Austin TX 78701</div>
+                                <div class="chat-bubble sent">123 St, Anytown 91234</div>
                                 <div class="chat-bubble received">Thank you. Hold tight—we're confirming your request now. One of our technicians will call you shortly to confirm dispatch.</div>
                             </div>
                         </div>
@@ -180,7 +193,7 @@
             </div>
         </section>
 
-        <!-- SECTION 6: Lead Email -->
+        <!-- SECTION 6: Authentic Lead Email -->
         <section class="split-section section-padding reverse bg-offwhite">
             <div class="container split-container">
                 <div class="split-content reveal-on-scroll">
@@ -189,21 +202,30 @@
                 </div>
                 <div class="split-media reveal-on-scroll delay-1">
                     <button class="lightbox-trigger" aria-label="Expand Email Screenshot" data-target="email-mockup">
-                        <div class="email-mockup" id="email-mockup">
-                            <div class="email-header">
-                                <div class="email-dots"><span></span><span></span><span></span></div>
-                                <div class="email-subject">🚨 New Lead from John Doe (Leaking Water Heater)</div>
+                        <div class="email-mockup gmail-replica" id="email-mockup">
+                            <div class="gmail-header-full">
+                                <div class="gmail-subject-line">🚨 NEW QUALIFIED EMERGENCY LEAD! <span class="gmail-label">Inbox</span></div>
+                                <div class="gmail-meta">
+                                    <div class="gmail-avatar">A</div>
+                                    <div class="gmail-sender-info">
+                                        <strong>yourfriendlyleadprovider@gmail.com</strong>
+                                        <span>to me ▾</span>
+                                    </div>
+                                    <div class="gmail-timestamp">1:49 PM (9 hours ago)</div>
+                                </div>
                             </div>
-                            <div class="email-body">
-                                <p><strong>Lead Number:</strong> #1042</p>
-                                <p><strong>Customer:</strong> John Doe</p>
-                                <p><strong>Phone Number:</strong> (555) 123-4567</p>
-                                <p><strong>Problem Summary:</strong> Water heater leaking in garage.</p>
-                                <p><strong>Urgency:</strong> <span class="badge-high">High (Water damage risk)</span></p>
-                                <p><strong>Address:</strong> 123 Main St, Austin TX 78701</p>
-                                <div class="email-actions">
-                                    <span class="btn btn-primary btn-small">Call Customer Now</span>
-                                    <span class="btn btn-ghost btn-small">Open in Maps</span>
+                            
+                            <div class="gmail-content-full">
+                                <h3>🚨 NEW QUALIFIED EMERGENCY LEAD!</h3>
+                                <p>📱 <strong>Phone:</strong> +911324987145</p>
+                                <p>🛠️ <strong>Issue:</strong> kitchen sink is broken</p>
+                                <p>📍 <strong>Location:</strong> 🗺️ 123 St, Anytown 91234</p>
+                                
+                                <div class="gmail-button-large">📞 Call Customer Directly</div>
+                                
+                                <div class="gmail-footer">
+                                    ---<br>
+                                    <i>This email was sent automatically with <a href="#">n8n</a></i>
                                 </div>
                             </div>
                         </div>
@@ -216,10 +238,10 @@
         <section class="benefits section-padding" id="features">
             <div class="container">
                 <h2 class="text-center reveal-on-scroll">Built for the realities of the trades.</h2>
-                <div class="grid grid-2 benefits-grid">
+                <div class="grid grid-2 benefits-grid mt-4">
                     <article class="card reveal-on-scroll">
                         <h3>Recover Missed Jobs</h3>
-                        <p>Turn a missed ring into a $500+ booked ticket.</p>
+                        <p>Turn a missed ring into a booked ticket.</p>
                     </article>
                     <article class="card reveal-on-scroll delay-1">
                         <h3>Know Before You Call</h3>
@@ -237,8 +259,7 @@
             </div>
         </section>
 
-        <!-- SECTION 8: Why Customers Respond -->
-        <!-- SECTION 8: Why Customers Respond -->
+        <!-- SECTION 8: Why Customers Respond (Punchy List) -->
         <section class="psychology section-padding bg-offwhite">
             <div class="container container-small reveal-on-scroll">
                 <h2 class="text-center">Why does this work so well?</h2>
@@ -270,7 +291,7 @@
             <div class="container">
                 <h2 class="text-center reveal-on-scroll">Simple setup. Honest timelines.</h2>
                 <p class="text-center subtitle reveal-on-scroll">We handle the technical heavy lifting, but telecom laws require a brief verification process to protect your business number. Here is exactly what to expect.</p>
-                <div class="process-grid grid grid-4 reveal-on-scroll delay-1">
+                <div class="process-grid grid grid-4 reveal-on-scroll delay-1 mt-4">
                     <div class="process-step">
                         <div class="process-num">1</div>
                         <h4>Sign Up</h4>
@@ -284,7 +305,7 @@
                     <div class="process-step">
                         <div class="process-num">3</div>
                         <h4>Carrier Verification</h4>
-                        <p>US carriers typically take 3–5 business days to approve your dedicated toll-free number.</p>
+                        <p>US carriers typically take 3–5 business days to approve your number.</p>
                     </div>
                     <div class="process-step">
                         <div class="process-num">4</div>
@@ -299,7 +320,7 @@
         <section class="roi bg-dark section-padding" id="roi-calculator">
             <div class="container container-small">
                 <h2 class="text-center reveal-on-scroll text-white">What is a missed call really costing you?</h2>
-                <div class="roi-calculator card reveal-on-scroll delay-1">
+                <div class="roi-calculator card reveal-on-scroll delay-1 mt-4">
                     <div class="roi-input-group">
                         <label for="missed-calls">Missed calls per week: <span id="missed-val">5</span></label>
                         <input type="range" id="missed-calls" min="1" max="30" value="5" aria-valuemin="1" aria-valuemax="30" aria-valuenow="5">
@@ -321,7 +342,7 @@
         <section class="faq section-padding bg-offwhite" id="faq">
             <div class="container container-small">
                 <h2 class="text-center reveal-on-scroll">Frequently Asked Questions</h2>
-                <div class="accordion reveal-on-scroll delay-1">
+                <div class="accordion reveal-on-scroll delay-1 mt-4">
                     <div class="accordion-item">
                         <button class="accordion-header" aria-expanded="false">
                             Does this replace my receptionist?
@@ -362,41 +383,46 @@
             </div>
         </section>
 
-       <!-- SECTION 12: Contact Form CTA -->
+        <!-- SECTION 12: Web3Forms Contact CTA -->
         <section class="final-cta section-padding" id="cta">
             <div class="container container-small reveal-on-scroll glow-effect">
                 <div class="contact-card">
                     <h2 class="text-center">Stop losing jobs to the voicemail beep.</h2>
                     <p class="text-center mb-4">Leave your details below to see how Infinmode works and get pricing. We'll reach out shortly.</p>
                     
-                    <!-- Web3Forms Integration (Free email forwarding) -->
-                    <!-- Go to web3forms.com to get your free access_key and replace the value below -->
-                    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-                        
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required placeholder="John Doe">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required placeholder="john@example.com">
-                        </div>
-                        
-                        <!-- Honeypot Spam Protection -->
-                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-                        
-                        <button type="submit" class="btn btn-primary btn-full btn-large mt-2">Get Started / See Pricing</button>
-                    </form>
+                    <!-- Web3Forms Integration -->
+                   <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+    <!-- YOUR KEY AND SETTINGS -->
+                    <input type="hidden" name="access_key" value="69b4a579-e13b-454a-a5a9-77233b38a324">
+                    <input type="hidden" name="subject" value="🚨 NEW LEAD from Infinmode Website!">
+                    <input type="hidden" name="from_name" value="Infinmode System">
+                    
+                    <!-- THE VISIBLE FIELDS -->
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
+                    
+                    <!-- Honeypot Spam Protection -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    
+                    <button type="submit" class="btn btn-primary btn-full btn-large mt-2">Get Started / See Pricing</button>
+                </form>
                 </div>
             </div>
         </section>
+    </main>
+
     <!-- SECTION 13: Footer -->
     <footer class="site-footer">
         <div class="container footer-container">
