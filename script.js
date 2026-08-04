@@ -116,8 +116,10 @@ document.addEventListener('DOMContentLoaded', () => {
         jobSlider.setAttribute('aria-valuenow', jobValue);
     }
 
-    missedSlider.addEventListener('input', calculateROI);
-    jobSlider.addEventListener('input', calculateROI);
+    if(missedSlider && jobSlider) {
+        missedSlider.addEventListener('input', calculateROI);
+        jobSlider.addEventListener('input', calculateROI);
+    }
 
     /* ==========================================================================
        LIGHTBOX (FOR MOCKUP SCREENSHOTS)
@@ -148,6 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const closeLightbox = () => {
+        if(!lightbox) return;
         lightbox.classList.remove('active');
         lightbox.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
@@ -156,18 +159,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 300); // Wait for transition
     };
 
-    lightboxClose.addEventListener('click', closeLightbox);
+    if(lightboxClose) {
+        lightboxClose.addEventListener('click', closeLightbox);
+    }
     
     // Close on outside click
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
-            closeLightbox();
-        }
-    });
+    if(lightbox) {
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+    }
 
     // Close on Escape key
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        if (e.key === 'Escape' && lightbox && lightbox.classList.contains('active')) {
             closeLightbox();
         }
     });
@@ -175,6 +182,66 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ==========================================================================
        DYNAMIC YEAR IN FOOTER
        ========================================================================== */
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const yearEl = document.getElementById('year');
+    if(yearEl) yearEl.textContent = new Date().getFullYear();
 
+    /* ==========================================================================
+       CONTACT FORM AJAX SUBMISSION (Premium UX)
+       ========================================================================== */
+    const form = document.querySelector('.contact-form');
+    
+    if(form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Stop standard HTML redirect
+            
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.innerText;
+            
+            // UX: Show sending state
+            submitButton.innerText = 'Sending...';
+            submitButton.style.opacity = '0.7';
+            submitButton.style.pointerEvents = 'none';
+
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    // Success state: replace form with a nice thank you message
+                    form.innerHTML = `
+                        <div style="text-align: center; padding: 20px 0;">
+                            <div style="font-size: 3rem; margin-bottom: 10px;">✅</div>
+                            <h3 style="margin-bottom: 10px;">Message Sent!</h3>
+                            <p style="color: var(--c-text-secondary);">Thank you for reaching out. We will be in touch shortly with pricing and setup details.</p>
+                        </div>
+                    `;
+                } else {
+                    // Handle API error
+                    console.log(response);
+                    submitButton.innerText = originalButtonText;
+                    submitButton.style.opacity = '1';
+                    submitButton.style.pointerEvents = 'auto';
+                    alert("Something went wrong. Please try again.");
+                }
+            })
+            .catch(error => {
+                // Handle network error
+                console.log(error);
+                submitButton.innerText = originalButtonText;
+                submitButton.style.opacity = '1';
+                submitButton.style.pointerEvents = 'auto';
+                alert("Network error. Please check your connection and try again.");
+            });
+        });
+    }
 });
